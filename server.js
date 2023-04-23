@@ -49,11 +49,11 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/public"));
 
-// app.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "app/index.html"));
-// });
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "app/index.html"));
+});
 
 // URLS
 app.use("/api/v1/products", products);
