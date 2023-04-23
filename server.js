@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const colors = require("colors");
 const errorHandler = require("./middleware/error");
 const check = require("./middleware/check");
+const cors = require("cors");
 
 // Load Config File
 // const config = require("./config/config.json");
@@ -27,6 +28,12 @@ const app = express();
 
 //Body Parser
 app.use(express.json());
+
+const corsOptions = {
+  origin: "https://dreamy-dieffenbachia-6d5e2e.netlify.app/",
+};
+
+app.use(cors(corsOptions));
 
 // CORS
 app.use((req, res, next) => {
